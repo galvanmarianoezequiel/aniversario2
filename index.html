@@ -1,13 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Any & Mariano · La Aventura de 2 Años</title>
-    <link rel="stylesheet" href="./src/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#241d35" />
+    <title>Any & Mariano — La Aventura de 2 Años</title>
   </head>
   <body>
-    <div id="game-container"></div>
-    <script type="module" src="./src/main.ts"></script>
+    <div id="app">
+      <div id="game-container"></div>
+      <div id="mobile-orientation-prompt" class="orientation-prompt" aria-hidden="true">
+        <section class="orientation-card" role="dialog" aria-labelledby="orientation-title">
+          <div class="orientation-icon" aria-hidden="true">↻</div>
+          <h1 id="orientation-title">Mejor en horizontal</h1>
+          <p id="orientation-message">
+            Este juego se disfruta mejor con el celular girado. Activá pantalla completa y poné el
+            teléfono en modo horizontal.
+          </p>
+          <button id="orientation-action" type="button">PANTALLA COMPLETA</button>
+          <p id="orientation-status" class="orientation-status" aria-live="polite"></p>
+        </section>
+      </div>
+      <button
+        id="fullscreen-action"
+        class="fullscreen-action"
+        type="button"
+        aria-label="Activar pantalla completa"
+      >
+        ⛶
+      </button>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
